@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fb;
+  color: #333;
+}
+
+.post-navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: solid 1.75px;
+}
+
+.post-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0077ff;
+}
+
+.post-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.post-nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.post-nav-links a:hover {
+  color: #0077ff;
+}
+
+.post-post-page {
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/975/547/822/drawing-doodle-wallpaper-preview.jpg");
+}
+
+.post-page-header {
+  display: flex;
+  padding: 40px 0px 10px;
+  justify-content: center;
+  width: 98vw;
+}
+
+.post-page-header h1 {
+  border: solid 1.7px #000;
+  -webkit-text-stroke: 1px #000;
+  background: #fff;
+  width: 50%;
+  border-radius: 10px;
+  font-size: 2.2rem;
+  color: #0077ff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.post-page-header p {
+  color: #555;
+  font-size: 1rem;
+}
+
+.post-form-section {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 30px 40px;
+  border: solid 1.75px;
+}
+
+.post-type-select {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 25px;
+}
+
+.post-type-select label {
+  font-weight: 600;
+  color: #333;
+}
+
+.post-type-select input[type="radio"] {
+  margin-right: 8px;
+}
+
+.post-item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.post-form-group input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.post-form-group input:focus {
+  outline: none;
+  border-color: #0077ff;
+}
+
+.post-submit-btn {
+  background-color: #0077ff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.post-submit-btn:hover {
+  background-color: #005fcc;
+}
+
+.post-footer {
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.9rem;
+  color: #777;
+  background-color: #fff;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 60px;
+}
