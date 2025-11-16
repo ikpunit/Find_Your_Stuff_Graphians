@@ -12,7 +12,6 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: solid 1.75px;
 }
 
 .post-nav-container {
@@ -45,26 +44,31 @@ body {
 }
 
 .post-post-page {
-  background-image: url("https://c4.wallpaperflare.com/wallpaper/975/547/822/drawing-doodle-wallpaper-preview.jpg");
+  background-image: url("../Have\ you\ lost\ or\ found\ Something.png");
+  background-size: 40vw 100vh;
+  background-position: 0 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .post-page-header {
   display: flex;
-  padding: 40px 0px 10px;
   justify-content: center;
-  width: 98vw;
+  width: 60vw;
 }
 
 .post-page-header h1 {
-  border: solid 1.7px #000;
+  padding-top: 10px;
   -webkit-text-stroke: 1px #000;
   background: #fff;
-  width: 50%;
-  border-radius: 10px;
   font-size: 2.2rem;
   color: #0077ff;
-  margin-bottom: 10px;
   text-align: center;
+  width: 100%;
 }
 
 .post-page-header p {
@@ -73,13 +77,10 @@ body {
 }
 
 .post-form-section {
-  max-width: 600px;
-  margin: 40px auto;
+  box-sizing: border-box;
+  width: 60vw;
   background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 30px 40px;
-  border: solid 1.75px;
 }
 
 .post-type-select {
@@ -150,5 +151,4 @@ body {
   color: #777;
   background-color: #fff;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
-  margin-top: 60px;
 }
