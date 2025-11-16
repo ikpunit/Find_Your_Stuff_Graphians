@@ -38,6 +38,33 @@ db.getConnection((err, connection) => {
 });
 
 // -------------------------------
+// 🚀 Create TABLE if it doesn't exist
+// -------------------------------
+const createTableQuery = `
+CREATE TABLE IF NOT EXISTS items (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  type ENUM('lost', 'found') NOT NULL,
+  item_name VARCHAR(255) NOT NULL,
+  place VARCHAR(255) NOT NULL,
+  date DATETIME NOT NULL,
+  picture LONGBLOB DEFAULT NULL,
+  person_name VARCHAR(255) NOT NULL,
+  contact VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);
+`;
+
+db.query(createTableQuery, (err) => {
+  if (err) {
+    console.error("❌ Error creating items table:", err);
+  } else {
+    console.log("✅ items table is ready");
+  }
+});
+
+
+// -------------------------------
 // File Upload Handling
 // -------------------------------
 const storage = multer.memoryStorage();
