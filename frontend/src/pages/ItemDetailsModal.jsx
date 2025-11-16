@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./ItemDetailsModal.css";
 
 export default function ItemDetailsModal({ itemId, onClose }) {
+  const API_URL = import.meta.env.VITE_API_URL;
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchItemDetails() {
       try {
-        const response = await fetch(`https://backend-production.up.railway.app/api/item/${itemId}`);
+        const response = await fetch(`${API_URL}/api/item/${itemId}`);
         if (!response.ok) throw new Error("Failed to fetch item details");
         const data = await response.json();
         setItem(data);
@@ -20,7 +21,7 @@ export default function ItemDetailsModal({ itemId, onClose }) {
     }
 
     if (itemId) fetchItemDetails();
-  }, [itemId]);
+  }, [itemId, API_URL]);
 
   if (!itemId) return null;
 

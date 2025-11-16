@@ -4,13 +4,14 @@ import "./Home.css";
 import "./Home-handset.css";
 
 export default function Home() {
+  const API_URL = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
   const [recentItems, setRecentItems] = useState([]);
 
   useEffect(() => {
     async function loadRecentItems() {
       try {
-        const response = await fetch("https://backend-production.up.railway.app/api/recent-items");
+        const response = await fetch(`${API_URL}/api/recent-items`);
         if (!response.ok) throw new Error("Failed to fetch recent items");
         const data = await response.json();
         setRecentItems(data);
@@ -19,7 +20,7 @@ export default function Home() {
       }
     }
     loadRecentItems();
-  }, []);
+  }, [API_URL]);
 
   return (
     <div className="Home">

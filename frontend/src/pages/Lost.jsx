@@ -47,14 +47,14 @@ function ItemCard({ item, onView }) {
 }
 
 export default function Lost() {
+  const API_URL = import.meta.env.VITE_API_URL;
   const [items, setItems] = useState([]);
   const [selectedItemId, setSelectedItemId] = useState(null);
 
-  
   useEffect(() => {
     async function loadLostItems() {
       try {
-        const response = await fetch("https://backend-production.up.railway.app/api/lost-items");
+        const response = await fetch(`${API_URL}/api/lost-items`);
         if (!response.ok) throw new Error("Failed to fetch lost items");
         const data = await response.json();
         setItems(data);
@@ -63,7 +63,7 @@ export default function Lost() {
       }
     }
     loadLostItems();
-  }, []);
+  }, [API_URL]);
 
   const handleView = (id) => {
     setSelectedItemId(id);

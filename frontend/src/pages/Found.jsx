@@ -45,8 +45,9 @@ function ItemCard({ item, onView }) {
 }
 
 async function fetchFoundItems() {
+  const API_URL = import.meta.env.VITE_API_URL;
   try {
-    const response = await fetch("https://backend-production.up.railway.app/api/found-items");
+    const response = await fetch(`${API_URL}/api/found-items`);
     if (!response.ok) {
       throw new Error("Failed to fetch items from server");
     }
@@ -59,13 +60,14 @@ async function fetchFoundItems() {
 }
 
 export default function Found() {
+  const API_URL = import.meta.env.VITE_API_URL;
   const [items, setItems] = useState([]);
   const [selectedItemId, setSelectedItemId] = useState(null);
 
   useEffect(() => {
     async function loadData() {
       try {
-        const response = await fetch("https://backend-production.up.railway.app/api/found-items");
+        const response = await fetch(`${API_URL}/api/found-items`);
         const data = await response.json();
         setItems(data);
       } catch (err) {
@@ -73,7 +75,7 @@ export default function Found() {
       }
     }
     loadData();
-  }, []);
+  }, [API_URL]);
 
   const handleView = (id) => {
     setSelectedItemId(id);

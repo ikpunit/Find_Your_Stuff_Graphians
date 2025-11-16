@@ -26,6 +26,7 @@ function Navbar() {
 }
 
 export default function Post() {
+  const API_URL = import.meta.env.VITE_API_URL;
   const [type, setType] = useState("found");
   const [formData, setFormData] = useState({
     itemName: "",
@@ -59,7 +60,7 @@ export default function Post() {
         dataToSend.append("picture", formData.picture);
       }
 
-      const response = await fetch("https://backend-production.up.railway.app/api/post-item", {
+      const response = await fetch(`${API_URL}/api/post-item`, {
         method: "POST",
         body: dataToSend,
       });
