@@ -46,7 +46,7 @@ function ItemCard({ item, onView }) {
 
 async function fetchFoundItems() {
   try {
-    const response = await fetch("http://localhost:5000/api/found-items");
+    const response = await fetch("https://backend-production.up.railway.app/api/found-items");
     if (!response.ok) {
       throw new Error("Failed to fetch items from server");
     }
@@ -65,7 +65,7 @@ export default function Found() {
   useEffect(() => {
     async function loadData() {
       try {
-        const response = await fetch("http://localhost:5000/api/found-items");
+        const response = await fetch("https://backend-production.up.railway.app/api/found-items");
         const data = await response.json();
         setItems(data);
       } catch (err) {

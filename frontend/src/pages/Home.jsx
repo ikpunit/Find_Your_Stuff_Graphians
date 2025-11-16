@@ -10,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     async function loadRecentItems() {
       try {
-        const response = await fetch("http://localhost:5000/api/recent-items");
+        const response = await fetch("https://backend-production.up.railway.app/api/recent-items");
         if (!response.ok) throw new Error("Failed to fetch recent items");
         const data = await response.json();
         setRecentItems(data);

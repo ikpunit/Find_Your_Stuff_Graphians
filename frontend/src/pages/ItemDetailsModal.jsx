@@ -8,7 +8,7 @@ export default function ItemDetailsModal({ itemId, onClose }) {
   useEffect(() => {
     async function fetchItemDetails() {
       try {
-        const response = await fetch(`http://localhost:5000/api/item/${itemId}`);
+        const response = await fetch(`https://backend-production.up.railway.app/api/item/${itemId}`);
         if (!response.ok) throw new Error("Failed to fetch item details");
         const data = await response.json();
         setItem(data);

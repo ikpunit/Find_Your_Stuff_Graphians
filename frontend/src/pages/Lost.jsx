@@ -54,7 +54,7 @@ export default function Lost() {
   useEffect(() => {
     async function loadLostItems() {
       try {
-        const response = await fetch("http://localhost:5000/api/lost-items");
+        const response = await fetch("https://backend-production.up.railway.app/api/lost-items");
         if (!response.ok) throw new Error("Failed to fetch lost items");
         const data = await response.json();
         setItems(data);
